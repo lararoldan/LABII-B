@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bauhaus · Acceso</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+<a href="index.html" class="registro__volver">&#9664;</a>
+
+  <!-- PÁGINA DE ACCESO -->
+ <section class="acceso">
+
+  <!-- Fondo decorativo -->
+  <div class="reg__col-izquierda"></div>
+  <div class="reg__circulo reg__circulo--violeta"></div>
+
+  <div class="reg__col-derecha">
+    <div class="reg__rect-beige"></div>
+    <div class="reg__rect-naranja">
+      <div class="reg__circulo reg__circulo--beige"></div>
+    </div>
+  </div>
+  <div class="reg__circulo reg__circulo--rojo"></div>
+
+    <!-- Tarjeta con las dos opciones -->
+    <div class="acceso__card">
+
+      <!-- Tabs: Login / Crear cuenta -->
+      <div class="acceso__tabs">
+        <button class="acceso__tab activo" onclick="mostrarTab('login')">Iniciar sesión</button>
+        <button class="acceso__tab" onclick="mostrarTab('registro')">Crear cuenta</button>
+      </div>
+
+      <!-- FORMULARIO LOGIN -->
+      <div class="acceso__form" id="form-login">
+        <h2>Bienvenido</h2>
+        <input type="text" id="login-nombre" placeholder="Nombre de usuario" />
+        <input type="password" id="login-pass" placeholder="Contraseña" />
+        <button class="btn-acceso" onclick="iniciarSesion()">Ingresar</button>
+      </div>
+
+      <!-- FORMULARIO CREAR CUENTA -->
+      <div class="acceso__form oculto" id="form-registro">
+        <h2>Crear cuenta</h2>
+        <input type="text" id="reg-nombre" placeholder="Nombre de usuario" />
+        <input type="email" id="reg-email" placeholder="Gmail" />
+        <input type="password" id="reg-pass" placeholder="Contraseña" />
+        <button class="btn-acceso" onclick="crearCuenta()">Registrarme</button>
+      </div>
+
+    </div>
+
+    <!-- Mensaje de éxito (oculto por defecto) -->
+    <div class="acceso__mensaje oculto" id="mensaje-exito">
+      <p id="mensaje-texto"></p>
+    </div>
+
+  </section>
+  <footer class="footer">
+    <p>Bauhaus · Lab II · 2026 ©</p>
+  </footer>
+  <script src="registro.js"></script>
+</body>
+</html>
+

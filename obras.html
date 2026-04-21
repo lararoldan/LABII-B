@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bauhaus · Obras</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+
+  <!-- GALERÍA -->
+  <section class="galeria">
+<a href="index.html" class="registro__volver">&#9664;</a>
+    <h1 class="galeria__titulo">Obras</h1>
+    <div class="galeria__linea-titulo"></div>
+
+    <!-- Buscador -->
+    <div class="galeria__buscador">
+      <input type="text" id="buscador" placeholder="Buscar por nombre o autor..." oninput="filtrarObras()" />
+    </div>
+
+    <!-- Filtros -->
+    <div class="galeria__filtros">
+      <button class="filtro activo" onclick="filtrarPorRama('todas', this)">Todas</button>
+      <button class="filtro" onclick="filtrarPorRama('arquitectura', this)">Arquitectura</button>
+      <button class="filtro" onclick="filtrarPorRama('arte', this)">Arte</button>
+      <button class="filtro" onclick="filtrarPorRama('diseño industrial', this)">Diseño Industrial</button>
+      <button class="filtro" onclick="filtrarPorRama('diseño textil', this)">Diseño Textil</button>
+      <button class="filtro" onclick="filtrarPorRama('diseño gráfico', this)">Diseño Gráfico</button>
+    </div>
+
+    <!-- Grid de obras -->
+    <div class="galeria__grid" id="galeriaGrid">
+
+      <!-- Obra 1 -->
+<div class="obra-card" data-rama="diseño industrial" data-nombre="Lámpara WA 24" data-autor="Wilhelm Wagenfeld">
+  <div class="obra-flip">
+    <div class="obra-flip__frente">
+      <div class="obra-card__img"><img src="Imagenes/Obras1.png" alt="Lámpara WA 24" /></div>
+      <div class="obra-card__info">
+        <h3>Lámpara WA 24</h3>
+        <p class="obra-card__autor">Wilhelm Wagenfeld · 1924</p>
+      </div>
+    </div>
+    <div class="obra-flip__dorso">
+      <p class="obra-flip__rama">Diseño Industrial</p>
+      <h3>Lámpara WA 24</h3>
+      <p class="obra-flip__desc">Base de metal niquelado, fuste cilíndrico y pantalla de vidrio opalino semiesférica, combinando estética funcional con formas geométricas simples.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Obra 2 -->
+<div class="obra-card" data-rama="diseño gráfico" data-nombre="Cartel Exposición Bauhaus" data-autor="Joost Schmidt">
+  <div class="obra-flip">
+    <div class="obra-flip__frente">
+      <div class="obra-card__img"><img src="Imagenes/Obras2.jpg" alt="Cartel Exposición Bauhaus" /></div>
+      <div class="obra-card__info">
+        <h3>Cartel Exposición Bauhaus</h3>
+        <p class="obra-card__autor">Joost Schmidt · 1923</p>
+      </div>
+    </div>
+    <div class="obra-flip__dorso">
+      <p class="obra-flip__rama">Diseño Gráfico</p>
+      <h3>Cartel Exposición Bauhaus</h3>
+      <p class="obra-flip__desc">Composición geométrica abstracta en colores primarios y tipografía sans-serif, simbolizando la unión entre arte y tecnología.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Obra 3 -->
+<div class="obra-card" data-rama="arquitectura" data-nombre="Haus am Horn" data-autor="Georg Muche">
+  <div class="obra-flip">
+    <div class="obra-flip__frente">
+      <div class="obra-card__img"><img src="Imagenes/Obras3.jpg" alt="Haus am Horn" /></div>
+      <div class="obra-card__info">
+        <h3>Haus am Horn</h3>
+        <p class="obra-card__autor">Georg Muche · 1923</p>
+      </div>
+    </div>
+    <div class="obra-flip__dorso">
+      <p class="obra-flip__rama">Arquitectura</p>
+      <h3>Haus am Horn</h3>
+      <p class="obra-flip__desc">Vivienda unifamiliar de formas cúbicas y blancas, prototipo de la arquitectura moderna y única obra construida por la Bauhaus en Weimar.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Obra 4 -->
+<div class="obra-card" data-rama="diseño industrial" data-nombre="Infusor de té MT 49" data-autor="Marianne Brandt">
+  <div class="obra-flip">
+    <div class="obra-flip__frente">
+      <div class="obra-card__img"><img src="Imagenes/Obras4.jpg" alt="Infusor de té MT 49" /></div>
+      <div class="obra-card__info">
+        <h3>Infusor de té MT 49</h3>
+        <p class="obra-card__autor">Marianne Brandt · 1924</p>
+      </div>
+    </div>
+    <div class="obra-flip__dorso">
+      <p class="obra-flip__rama">Diseño Industrial</p>
+      <h3>Infusor de té MT 49</h3>
+      <p class="obra-flip__desc">Pieza maestra del racionalismo. Su diseño explica su función a través de la geometría pura, combinando formas básicas.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Obra 5 -->
+<div class="obra-card" data-rama="diseño gráfico" data-nombre="Alfabeto Universal" data-autor="Herbert Bayer">
+  <div class="obra-flip">
+    <div class="obra-flip__frente">
+      <div class="obra-card__img"><img src="Imagenes/Obras55.jpg" alt="Alfabeto Universal" /></div>
+      <div class="obra-card__info">
+        <h3>Alfabeto Universal</h3>
+        <p class="obra-card__autor">Herbert Bayer · 1925</p>
+      </div>
+    </div>
+    <div class="obra-flip__dorso">
+      <p class="obra-flip__rama">Diseño Gráfico</p>
+      <h3>Alfabeto Universal</h3>
+      <p class="obra-flip__desc">Tipografía minimalista, racional y moderna que sentó las bases del diseño gráfico publicitario actual.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Obra 6 -->
+<div class="obra-card" data-rama="diseño industrial" data-nombre="Cuna" data-autor="Peter Keler">
+  <div class="obra-flip">
+    <div class="obra-flip__frente">
+      <div class="obra-card__img"><img src="Imagenes/Obras6.jpg" alt="Cuna" /></div>
+      <div class="obra-card__info">
+        <h3>Cuna</h3>
+        <p class="obra-card__autor">Peter Keler · 1922</p>
+      </div>
+    </div>
+    <div class="obra-flip__dorso">
+      <p class="obra-flip__rama">Diseño Industrial</p>
+      <h3>Cuna</h3>
+      <p class="obra-flip__desc">Destacada por aplicar la teoría del color y las formas geométricas.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Obra 7 -->
+<div class="obra-card" data-rama="diseño industrial" data-nombre="Tablero de Ajedrez" data-autor="Josef Hartwig">
+  <div class="obra-flip">
+    <div class="obra-flip__frente">
+      <div class="obra-card__img"><img src="Imagenes/Obras7.jpg" alt="Tablero de Ajedrez" /></div>
+      <div class="obra-card__info">
+        <h3>Tablero de Ajedrez</h3>
+        <p class="obra-card__autor">Josef Hartwig · 1923</p>
+      </div>
+    </div>
+    <div class="obra-flip__dorso">
+      <p class="obra-flip__rama">Diseño Industrial</p>
+      <h3>Tablero de Ajedrez</h3>
+      <p class="obra-flip__desc">Eliminó toda simbología tradicional para sustituirla por un sistema visual geométrico basado en el movimiento de cada pieza.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Obra 8 -->
+<div class="obra-card" data-rama="diseño industrial" data-nombre="Silla BRNO" data-autor="Mies Van Der Rohe">
+  <div class="obra-flip">
+    <div class="obra-flip__frente">
+      <div class="obra-card__img"><img src="Imagenes/Obras8.jpg" alt="Silla BRNO" /></div>
+      <div class="obra-card__info">
+        <h3>Silla BRNO</h3>
+        <p class="obra-card__autor">Mies Van Der Rohe · 1929</p>
+      </div>
+    </div>
+    <div class="obra-flip__dorso">
+      <p class="obra-flip__rama">Diseño Industrial</p>
+      <h3>Silla BRNO</h3>
+      <p class="obra-flip__desc">Estructura en voladizo de acero en forma de "C", líneas limpias y ausencia de patas traseras.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Obra 9 -->
+<div class="obra-card" data-rama="diseño industrial" data-nombre="Wardrobe on Rollers" data-autor="Josef Pohl">
+  <div class="obra-flip">
+    <div class="obra-flip__frente">
+      <div class="obra-card__img"><img src="Imagenes/Obras9.jpg" alt="Wardrobe on Rollers" /></div>
+      <div class="obra-card__info">
+        <h3>Wardrobe on Rollers</h3>
+        <p class="obra-card__autor">Josef Pohl · 1929</p>
+      </div>
+    </div>
+    <div class="obra-flip__dorso">
+      <p class="obra-flip__rama">Diseño Industrial</p>
+      <h3>Wardrobe on Rollers</h3>
+      <p class="obra-flip__desc">Pieza 100% madera, destaca por sus líneas sencillas y su utilidad.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Obra 10 -->
+<div class="obra-card" data-rama="diseño industrial" data-nombre="Silla Barcelona" data-autor="Mies Van der Rohe y Lilly Reich">
+  <div class="obra-flip">
+    <div class="obra-flip__frente">
+      <div class="obra-card__img"><img src="Imagenes/Obras10.jpg" alt="Silla Barcelona" /></div>
+      <div class="obra-card__info">
+        <h3>Silla Barcelona</h3>
+        <p class="obra-card__autor">Mies Van der Rohe y Lilly Reich · 1929</p>
+      </div>
+    </div>
+    <div class="obra-flip__dorso">
+      <p class="obra-flip__rama">Diseño Industrial</p>
+      <h3>Silla Barcelona</h3>
+      <p class="obra-flip__desc">Lujo minimalista. Icono del diseño moderno.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Obra 11 -->
+<div class="obra-card" data-rama="diseño industrial" data-nombre="Isokon Long Chair" data-autor="Marcel Breuer">
+  <div class="obra-flip">
+    <div class="obra-flip__frente">
+      <div class="obra-card__img"><img src="Imagenes/MBobras4.jpg" alt="Isokon Long Chair" /></div>
+      <div class="obra-card__info">
+        <h3>Isokon Long Chair</h3>
+        <p class="obra-card__autor">Marcel Breuer · 1935</p>
+      </div>
+    </div>
+    <div class="obra-flip__dorso">
+      <p class="obra-flip__rama">Diseño Industrial</p>
+      <h3>Isokon Long Chair</h3>
+      <p class="obra-flip__desc">Fabricada íntegramente en madera laminada de abedul moldeada.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Obra 12 -->
+<div class="obra-card" data-rama="diseño industrial" data-nombre="Silla de Madera con Entramado" data-autor="Marcel Breuer y Gunta Stolzl">
+  <div class="obra-flip">
+    <div class="obra-flip__frente">
+      <div class="obra-card__img"><img src="Imagenes/GS5obra.jpg" alt="Silla de Madera con Entramado" /></div>
+      <div class="obra-card__info">
+        <h3>Silla de Madera con Entramado</h3>
+        <p class="obra-card__autor">Marcel Breuer y Gunta Stolzl · 1921</p>
+      </div>
+    </div>
+    <div class="obra-flip__dorso">
+      <p class="obra-flip__rama">Diseño Textil y Diseño Industrial</p>
+      <h3>Silla de Madera con Entramado</h3>
+      <p class="obra-flip__desc">Colaboración entre el taller de carpintería y el de tejido. Refleja la transición de la Bauhaus desde las influencias expresionistas.</p>
+    </div>
+  </div>
+</div>
+
+  <footer class="footer">
+    <p>Bauhaus · Lab II · 2026 ©</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

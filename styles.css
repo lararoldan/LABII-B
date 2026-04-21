@@ -1,0 +1,1699 @@
+/* ===== FUENTE ===== */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;600&display=swap');
+
+/* ===== RESET BÁSICO ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #d4c5a9; /* beige del diseño */
+  font-family: 'Work Sans', sans-serif;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1a1a1a;   /* negro */
+  padding: 0 2rem;
+  height: 56px;
+  width: 100%;
+}
+
+/* ===== LOGO ===== */
+.navbar__logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.1em;
+  color: white;
+}
+
+/* ===== LISTA DE LINKS ===== */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  list-style: none;
+}
+
+.navbar__links li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  position: relative; /* necesario para el dropdown */
+}
+
+.navbar__links a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.navbar__links a:hover {
+  opacity: 0.7;
+}
+
+/* ===== ÍCONOS GEOMÉTRICOS ===== */
+.icono {
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* Triángulo amarillo hacia arriba (Galería) */
+.triangulo-amarillo {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 10px solid #f5c518;
+}
+
+/* Círculo azul (Obras) */
+.circulo-azul {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #1e6dd4;
+}
+
+/* Cuadrado rojo (Figuras) */
+.cuadrado-rojo {
+  width: 11px;
+  height: 11px;
+  background-color: #cc2200;
+}
+
+/* Triángulo amarillo hacia abajo (Ramas) */
+.triangulo-abajo-amarillo {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 10px solid #f5c518;
+}
+
+/* ===== PERFIL ===== */
+.navbar__perfil {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.separador {
+  color: #555;
+  font-size: 1.2rem;
+}
+
+.icono-perfil {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* ===== DROPDOWN (Ramas) ===== */
+.dropdown {
+  display: none;               /* oculto por defecto */
+  position: absolute;
+  top: 100%;                   /* aparece justo debajo del link */
+  left: 0;
+  background-color: #1a1a1a;
+  list-style: none;
+  min-width: 180px;
+  z-index: 100;
+}
+
+.dropdown li a {
+  display: block;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.85rem;
+  color: white;
+  transition: background 0.2s;
+}
+
+.dropdown li a:hover {
+  background-color: #333;
+}
+
+/* Mostrar dropdown al hacer hover */
+.tiene-dropdown:hover .dropdown {
+  display: block;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1a1a1a;
+  padding: 0 2rem;
+  height: 56px;
+
+  /* Esto lo hace flotante y centrado */
+  width: 90%;
+  max-width: 1100px;
+  margin: 1rem auto;        /* centrado horizontal + separación arriba */
+  position: sticky;
+  top: 1rem;
+  z-index: 100;
+  border-radius: 4px;       /* opcional: bordes levemente redondeados */
+}
+
+/*HOME*/
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;              /* ocupa toda la pantalla */
+  background-color: #d4c5a9; /* beige general */
+  overflow: hidden;
+}
+
+/* ===== COLUMNA IZQUIERDA (teal) ===== */
+.hero__col-izquierda {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 22%;
+  height: 80%;               /* no llega hasta arriba */
+  background-color: #2a7b7b; /* teal */
+}
+
+/* ===== CÍRCULO BEIGE GRANDE (izquierda arriba) ===== */
+.hero__circulo--beige {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-color: #e8e0d0;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ===== CÍRCULO MARRÓN/NARANJA (izquierda abajo, se sale) ===== */
+.hero__circulo--marron {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  /* mitad marrón (sobre el teal) mitad naranja (fuera del rect) */
+  background: linear-gradient(to right, #8b4513 50%, #e05a00 50%);
+  bottom: 5%;
+  right: -80px;              /* se sale hacia la derecha */
+}
+
+/* ===== COLUMNA DERECHA (dos rectángulos juntos) ===== */
+.hero__col-derecha {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 30%;
+  height: 85%;
+  display: flex;
+}
+
+.hero__rect-beige-claro {
+  width: 40%;
+  height: 100%;
+  background-color: #e8e0d0;
+  position: relative;
+}
+
+.hero__rect-naranja {
+  width: 60%;
+  height: 100%;
+  background-color: #e05a00;
+  position: relative;
+}
+
+/* ===== CÍRCULO BEIGE sobre el naranja (arriba derecha) ===== */
+.hero__circulo--blanco {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #e8e0d0;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ===== CÍRCULO VIOLETA (cruza los dos rectángulos) ===== */
+.hero__circulo--violeta {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-color: #3b2f7e;
+  bottom: 10%;
+  left: -20px;               /* cruza hacia el beige claro */
+}
+
+/* ===== TEXTO CENTRAL ===== */
+.hero__texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero__texto h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(4rem, 7vw, 7rem);
+  letter-spacing: 0.05em;
+  color: #1a1a1a;
+  line-height: 1;
+}
+
+.hero__subtitulo {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.hero__descripcion {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #1a1a1a;
+}
+
+/* ===== FLECHA ===== */
+.hero__flecha {
+  margin-top: 0.5rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  cursor: pointer;
+  animation: bajar 1.5s infinite;
+}
+
+@keyframes bajar {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
+}
+
+.navbar {
+  height: 68px; /* antes era 56px */
+}
+.hero__col-izquierda {
+  top: 15%;      /* antes era bottom: 0 */
+  bottom: 0;
+  height: auto;  /* dejá que top y bottom lo calculen */
+}
+
+.hero__col-derecha {
+  top: 15%;      /* mismo valor que la izquierda */
+  bottom: 0;
+  height: auto;
+}
+
+.hero__circulo--beige {
+  width: 210px;
+  height: 210px;
+}
+
+.hero__circulo--marron {
+  width: 210px;
+  height: 210px;
+}
+
+.hero__circulo--blanco {
+  width: 200px;
+  height: 200px;
+}
+
+.hero__circulo--violeta {
+  width: 210px;
+  height: 210px;
+}
+
+/* ===== SLIDER RAMAS ===== */
+.ramas {
+  position: relative;
+  width: 100%;
+  height: 70vh;              /* ocupa bastante pantalla */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background-color: #d4c5a9;
+}
+
+.ramas__contenedor {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.ramas__slide {
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* foto y texto al 50% cada uno */
+  min-width: 100%;
+  height: 100%;
+}
+
+/* Foto placeholder */
+.ramas__foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Cuando reemplaces el placeholder por imagen usá esto: */
+/* .ramas__foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+
+/* Lado derecho con texto */
+.ramas__contenido {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 4rem 3.5rem;
+  background-color: #d4c5a9;
+}
+
+.ramas__contenido h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  letter-spacing: 0.05em;
+  color: #1a1a1a;
+}
+
+.ramas__linea {
+  width: 60px;
+  height: 3px;
+  background-color: #1a1a1a;
+}
+
+.ramas__contenido p {
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 420px;
+  color: #1a1a1a;
+}
+
+.btn-ramas {
+  display: inline-block;
+  background-color: #2a7b7b;
+  color: white;
+  padding: 0.6rem 1.8rem;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  width: fit-content;
+  transition: opacity 0.2s;
+}
+
+.btn-ramas:hover {
+  opacity: 0.8;
+}
+
+/* Flechas */
+.ramas__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #f5c518;
+  color: #1a1a1a;
+  border: none;
+  width: 42px;
+  height: 42px;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s;
+}
+
+.ramas__btn:hover {
+  background-color: #d4a800;
+}
+
+.ramas__btn--prev { left: 12px; }
+.ramas__btn--next { right: 12px; }
+
+/* ===== PRINCIPALES OBRAS ===== */
+.obras {
+  padding: 4rem 3rem;
+  background-color: #d4c5a9;
+}
+
+.obras__titulo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.8rem;
+  letter-spacing: 0.05em;
+  color: #1a1a1a;
+  margin-bottom: 0.4rem;
+}
+
+.obras__linea-titulo {
+  width: 60px;
+  height: 3px;
+  background-color: #1a1a1a;
+  margin-bottom: 2rem;
+}
+
+/* 3 fotos en fila */
+.obras__galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.obras__card {
+  background-color: #f0ebe0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  height: 280px;
+}
+
+.obras__card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;  /* muestra la imagen completa sin recorte */
+}
+
+/* Texto y botón abajo */
+.obras__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.obras__footer p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #1a1a1a;
+  max-width: 700px;
+}
+
+.btn-obras {
+  display: inline-block;
+  background-color: #1a1a1a;
+  color: white;
+  padding: 0.6rem 1.8rem;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+
+.btn-obras:hover {
+  opacity: 0.75;
+} 
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1a1a1a;
+  padding: 0 2rem;
+  height: 68px;
+  width: 90%;
+  max-width: 1100px;
+  margin: 1rem auto;
+  position: sticky;
+  top: 1rem;
+  z-index: 100;
+  border-radius: 4px;
+}
+
+/*PRINCIPALES FIGURAS*/
+/* ===== PRINCIPALES FIGURAS ===== */
+.figuras {
+  position: relative;
+  padding: 5rem 3rem;
+  background-color: #e8dcc8;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* ---- Título ---- */
+.figuras__titulo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.8rem;
+  letter-spacing: 0.05em;
+  color: #1a1a1a;
+  align-self: flex-start;
+  margin-left: 0;
+  z-index: 1;
+}
+
+.figuras__linea-titulo {
+  width: 60px;
+  height: 3px;
+  background-color: #1a1a1a;
+  align-self: flex-start;
+  z-index: 1;
+}
+
+/* ---- Grid de tarjetas ---- */
+.figuras__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 240px);
+  gap: 2rem;
+  z-index: 1;
+}
+
+/* ---- Flip Card ---- */
+.flip-card {
+  width: 240px;
+  height: 320px;
+  perspective: 1000px;  /* necesario para el efecto 3D */
+  cursor: pointer;
+}
+
+.flip-card__inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+/* Al hacer hover se da vuelta */
+.flip-card:hover .flip-card__inner {
+  transform: rotateY(180deg);
+}
+
+/* Frente y dorso comparten posición */
+.flip-card__frente,
+.flip-card__dorso {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;  /* oculta la cara trasera */
+}
+
+/* Frente — la foto */
+.flip-card__frente img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: grayscale(100%);
+}
+
+/* Dorso — el nombre */
+.flip-card__dorso {
+  background-color: #1a1a1a;
+  transform: rotateY(180deg);  /* empieza girado */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-card__dorso p {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 0.1em;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* ---- Botón ---- */
+.btn-figuras {
+  display: inline-block;
+  background-color: #1a1a1a;
+  color: white;
+  padding: 0.6rem 1.8rem;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  z-index: 1;
+  transition: opacity 0.2s;
+}
+
+.btn-figuras:hover {
+  opacity: 0.75;
+}
+
+/* ---- Decoración: líneas negras ---- */
+.figuras__linea {
+  position: absolute;
+  width: 4px;
+  background-color: #1a1a1a;
+  z-index: 0;
+}
+
+.figuras__linea--izq-1 {
+  height: 45%;
+  left: 9%;
+  top: 0;
+}
+
+.figuras__linea--izq-2 {
+  height: 35%;
+  left: 11.5%;
+  top: 0;
+}
+
+.figuras__linea--der-1 {
+  height: 40%;
+  right: 9%;
+  top: 0;
+}
+
+.figuras__linea--der-2 {
+  height: 30%;
+  right: 11.5%;
+  top: 0;
+}
+
+/* ---- Decoración: círculos ---- */
+.figuras__circulo {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #f0ebe0;
+  z-index: 0;
+}
+
+.figuras__circulo--izq {
+  width: 180px;
+  height: 180px;
+  left: 3%;
+  top: 3%;
+}
+
+.figuras__circulo--der {
+  width: 200px;
+  height: 200px;
+  right: 4%;
+  bottom: 8%;
+}
+
+/* ===== REGISTRO ===== */
+.registro {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+ background-image: url('Iconos-B/Registrohome.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.registro__contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.registro__contenido h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5rem;
+  letter-spacing: 0.05em;
+  color: #1a1a1a;
+}
+
+.registro__contenido p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #1a1a1a;
+  max-width: 280px;
+}
+
+.btn-registro {
+  display: inline-block;
+  background-color: #1a1a1a;
+  color: white;
+  padding: 0.6rem 1.8rem;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  margin-top: 0.5rem;
+}
+
+.btn-registro:hover {
+  opacity: 0.75;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background-color: #1a1a1a;
+  color: white;
+  text-align: center;
+  padding: 1.2rem 2rem;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+}
+
+/* ===== SEPARADORES ===== */
+.figuras,
+.registro,
+.footer {
+  border-top: 21px solid #1a1a1a;
+}
+
+/* ===== PÁGINA ACCESO (registro.html) ===== */
+.acceso {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #d4c5a9;
+  padding: 3rem 1rem;
+}
+
+.acceso__card {
+  background-color: #f0ebe0;
+  width: 100%;
+  max-width: 440px;
+  padding: 2.5rem;
+  border-top: 6px solid #1a1a1a;
+}
+
+/* ---- Tabs ---- */
+.acceso__tabs {
+  display: flex;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #1a1a1a;
+}
+
+.acceso__tab {
+  flex: 1;
+  padding: 0.7rem;
+  background: none;
+  border: none;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.2s;
+}
+
+.acceso__tab.activo {
+  color: #1a1a1a;
+  border-bottom: 3px solid #1a1a1a;
+  margin-bottom: -2px;
+}
+
+/* ---- Formulario ---- */
+.acceso__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.acceso__form h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;
+  letter-spacing: 0.05em;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.acceso__form input {
+  padding: 0.75rem 1rem;
+  border: 2px solid #1a1a1a;
+  background-color: transparent;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.acceso__form input:focus {
+  border-color: #2a7b7b;
+}
+
+.btn-acceso {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: opacity 0.2s;
+}
+
+.btn-acceso:hover {
+  opacity: 0.75;
+}
+
+/* ---- Mensaje de éxito ---- */
+.acceso__mensaje {
+  margin-top: 1.5rem;
+  background-color: #2a7b7b;
+  color: white;
+  padding: 1rem 2rem;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  max-width: 440px;
+  width: 100%;
+}
+
+/* ---- Oculto ---- */
+.oculto {
+  display: none;
+}
+
+.perfil__dropdown {
+  display: none;
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background-color: #1a1a1a;
+  color: white;
+  padding: 1rem 1.2rem;
+  min-width: 180px;
+  flex-direction: column;
+  gap: 0.8rem;
+  z-index: 200;
+}
+
+.perfil__wrap:hover .perfil__dropdown {
+  display: flex;
+}
+
+.perfil__dropdown a {
+  color: white;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.perfil__dropdown a:hover {
+  opacity: 0.7;
+}
+
+.perfil__dropdown p {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #f5c518;
+}
+
+.perfil__dropdown button {
+  background: none;
+  border: 1px solid white;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.perfil__dropdown button:hover {
+  background-color: #333;
+}
+.icono-perfil {
+  width: 38px;
+  height: 38px;
+}
+
+.acceso {
+  background-image: url('Iconos-B/FondoRegistro.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.registro__volver {
+  display: inline-block;
+  margin: 1rem 0 0 3rem;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.registro__volver:hover {
+  opacity: 0.6;
+}
+
+.registro__volver {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background-color: #f5c518;
+  color: #1a1a1a;
+  font-size: 1rem;
+  text-decoration: none;
+  margin: 1rem 0 0 3rem;
+  transition: background 0.2s;
+}
+
+.registro__volver:hover {
+  background-color: #d4a800;
+}
+.icono-perfil {
+  width: 55px;
+  height: 55px;
+}
+
+
+.perfil__dropdown {
+  display: none;
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background-color: #1a1a1a;
+  color: white;
+  padding: 1rem 1.2rem;
+  min-width: 180px;
+  flex-direction: column;
+  gap: 0.8rem;
+  z-index: 200;
+}
+
+.perfil__dropdown.visible {
+  display: flex;
+}
+
+.icono-perfil {
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.perfil-1 {
+  width: 30px;
+  height: 30px;
+}
+
+.perfil-2 {
+  width: 35px;
+  height: 35px;
+}
+
+/* OBRAS*/
+
+/* =============================================
+   GALERÍA DE OBRAS
+   ============================================= */
+.galeria {
+  padding: 3rem 3rem 5rem;
+  background-color: #d4c5a9;
+  min-height: 100vh;
+}
+
+.galeria__titulo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  letter-spacing: 0.05em;
+  color: #1a1a1a;
+  margin-bottom: 0.4rem;
+}
+
+.galeria__linea-titulo {
+  width: 60px;
+  height: 3px;
+  background-color: #1a1a1a;
+  margin-bottom: 2rem;
+}
+
+/* Buscador */
+.galeria__buscador {
+  margin-bottom: 1.5rem;
+}
+
+.galeria__buscador input {
+  width: 100%;
+  max-width: 500px;
+  padding: 0.75rem 1rem;
+  border: 2px solid #1a1a1a;
+  background-color: transparent;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.galeria__buscador input:focus {
+  border-color: #2a7b7b;
+}
+
+/* Filtros */
+.galeria__filtros {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.filtro {
+  padding: 0.5rem 1.2rem;
+  border: 2px solid #1a1a1a;
+  background: transparent;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.filtro:hover,
+.filtro.activo {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+/* Grid */
+.galeria__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* Card */
+.obra-card {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.obra-card:hover {
+  transform: translateY(-4px);
+}
+
+.obra-card__img {
+  height: 220px;
+  background-color: #f0ebe0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.obra-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 1rem;
+  transition: transform 0.3s;
+}
+
+.obra-card:hover .obra-card__img img {
+  transform: scale(1.04);
+}
+
+.placeholder-img {
+  background-color: #b0a898;
+}
+
+.obra-card__info {
+  padding: 0.8rem 0 0;
+}
+
+.obra-card__info h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  color: #1a1a1a;
+}
+
+.obra-card__autor {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 0.2rem;
+}
+
+/* Ocultar cards filtradas */
+.obra-card.oculta {
+  display: none;
+}
+
+/* =============================================
+   MODAL
+   ============================================= */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.75);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__contenido {
+  background-color: #f0ebe0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 800px;
+  width: 90%;
+  max-height: 85vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.modal__contenido img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #e8e0d0;
+  padding: 2rem;
+}
+
+.modal__texto {
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.modal__rama {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #2a7b7b;
+}
+
+.modal__texto h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  color: #1a1a1a;
+  line-height: 1.1;
+}
+
+.modal__autor {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 600;
+}
+
+.modal__desc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #1a1a1a;
+}
+
+.modal__cerrar {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  background: #1a1a1a;
+  color: white;
+  border: none;
+  width: 32px; height: 32px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: opacity 0.2s;
+}
+
+.modal__cerrar:hover { opacity: 0.7; }
+/* ===== FLIP CARD OBRAS ===== */
+.obra-card {
+  perspective: 1000px;
+  cursor: pointer;
+  height: 320px;
+}
+
+.obra-flip {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.obra-card:hover .obra-flip {
+  transform: rotateY(180deg);
+}
+
+.obra-flip__frente,
+.obra-flip__dorso {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.obra-flip__frente {
+  display: flex;
+  flex-direction: column;
+}
+
+.obra-flip__dorso {
+  background-color: #1a1a1a;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.5rem;
+}
+
+.obra-flip__rama {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #2a7b7b;
+}
+
+.obra-flip__dorso h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  color: white;
+}
+
+.obra-flip__desc {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+/*FIGURAS*/
+/* =============================================
+   PÁGINA FIGURAS
+   ============================================= */
+.figuras-page__header {
+  padding: 3rem 3rem 1rem;
+  background-color: #d4c5a9;
+}
+
+.figuras-page__header h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  letter-spacing: 0.05em;
+  color: #1a1a1a;
+  margin-bottom: 0.4rem;
+}
+
+.figuras-page__linea {
+  width: 60px;
+  height: 3px;
+  background-color: #1a1a1a;
+}
+
+/* ---- Sección de cada figura ---- */
+.figura-seccion {
+  display: grid;
+  grid-template-columns: 260px 1fr 1fr;
+  gap: 3rem;
+  padding: 4rem 3rem;
+  border-top: 3px solid #1a1a1a;
+  align-items: start;
+}
+
+/* ---- Foto con hover ---- */
+.figura-seccion__foto-wrap {
+  position: relative;
+  width: 240px;
+  height: 300px;
+  flex-shrink: 0;
+}
+
+.figura-foto {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: grayscale(100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.figura-foto--activa {
+  opacity: 1;
+}
+
+.figura-seccion__foto-wrap:hover .figura-foto--activa {
+  opacity: 0;
+}
+
+.figura-seccion__foto-wrap:hover .figura-foto:not(.figura-foto--activa) {
+  opacity: 1;
+}
+
+/* ---- Biografía ---- */
+.figura-seccion__bio {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.figura-seccion__bio h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.figura-seccion__rol {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.figura-seccion__origen {
+  font-size: 0.85rem;
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+.figura-seccion__texto {
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* ---- Galería de obras ---- */
+.figura-seccion__obras {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+  align-self: start;
+}
+
+.figura-seccion__obras img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: grayscale(20%);
+}
+
+.figura-seccion__obras img:hover {
+  transform: scale(1.03);
+  filter: grayscale(0%);
+}
+/* =============================================
+   PÁGINA FIGURAS
+   ============================================= */
+.figuras-page__header {
+  padding: 3rem 3rem 1rem;
+  background-color: #d4c5a9;
+}
+
+.figuras-page__header h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  letter-spacing: 0.05em;
+  color: #1a1a1a;
+  margin-bottom: 0.4rem;
+}
+
+.figuras-page__linea {
+  width: 60px;
+  height: 3px;
+  background-color: #1a1a1a;
+}
+
+/* ---- Sección de cada figura ---- */
+.figura-seccion {
+  display: grid;
+  grid-template-columns: 260px 1fr 380px;
+  gap: 3rem;
+  padding: 4rem 3rem;
+  border-top: 3px solid #1a1a1a;
+  align-items: start;
+}
+
+/* ---- Flip card foto ---- */
+.figura-seccion__foto-wrap {
+  width: 240px;
+  height: 300px;
+  perspective: 1000px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.figura-foto__inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.figura-seccion__foto-wrap:hover .figura-foto__inner {
+  transform: rotateY(180deg);
+}
+
+.figura-foto__frente,
+.figura-foto__dorso {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.figura-foto__frente img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: grayscale(100%);
+}
+
+.figura-foto__dorso {
+  background-color: #1a1a1a;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.figura-foto__dorso h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.05em;
+  color: white;
+}
+
+.figura-foto__dorso p {
+  font-size: 0.8rem;
+  color: #ccc;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ---- Biografía ---- */
+.figura-seccion__bio {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.figura-seccion__bio h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.figura-seccion__rol {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.figura-seccion__origen {
+  font-size: 0.85rem;
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+.figura-seccion__texto {
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* ---- Carrusel de obras ---- */
+.figura-seccion__carrusel {
+  position: relative;
+  width: 100%;
+}
+
+.carrusel__img-wrap {
+  width: 100%;
+  height: 280px;
+  background-color: rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.carrusel__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: none;
+}
+
+.carrusel__img-wrap img.activa {
+  display: block;
+}
+
+.carrusel__controles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
+
+.carrusel__btn {
+  background-color: #f5c518;
+  color: #1a1a1a;
+  border: none;
+  width: 36px;
+  height: 36px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carrusel__btn:hover {
+  background-color: #d4a800;
+}
+
+.carrusel__contador {
+  font-size: 0.85rem;
+  font-weight: 600;
+  opacity: 0.6;
+}
+.figura-seccion__foto-wrap {
+  position: relative;
+  width: 240px;
+  height: 300px;
+  flex-shrink: 0;
+}
+
+.figura-foto {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: grayscale(100%);
+  transition: opacity 0.4s ease;
+}
+
+.figura-foto--hover {
+  opacity: 0;
+}
+
+.figura-seccion__foto-wrap:hover .figura-foto--principal {
+  opacity: 0;
+}
+
+.figura-seccion__foto-wrap:hover .figura-foto--hover {
+  opacity: 1;
+}
+.figura-foto {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: grayscale(100%);
+  transition: opacity 0.4s ease;
+}
+
+.figura-seccion__foto-wrap {
+  position: relative;
+  width: 240px;
+  height: 300px;
+  flex-shrink: 0;
+}
+
+.figura-seccion__foto-wrap {
+  position: relative;
+  width: 240px;
+  height: 300px;
+  flex-shrink: 0;
+}
+
+.figura-foto {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: grayscale(100%);
+  transition: opacity 0.4s ease;
+}
+
+.figura-foto--principal {
+  opacity: 1;
+}
+
+.figura-foto--hover {
+  opacity: 0;
+}
+
+.figura-seccion__foto-wrap:hover .figura-foto--principal {
+  opacity: 0;
+}
+
+.figura-seccion__foto-wrap:hover .figura-foto--hover {
+  opacity: 1;
+}
