@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bauhaus</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar__logo">Bauhaus</div>
+    <ul class="navbar__links">
+      <li>
+        <span class="icono circulo-azul"></span>
+        <a href="obras.html">Obras</a>
+      </li>
+      <li>
+        <span class="icono cuadrado-rojo"></span>
+        <a href="figuras.html">Figuras</a>
+      </li>
+      <li class="tiene-dropdown">
+        <span class="icono triangulo-abajo-amarillo"></span>
+        <a href="#">Ramas</a>
+        <ul class="dropdown">
+          <li><a href="#ramas" onclick="irARama(0)">▶ Arquitectura</a></li>
+          <li><a href="#ramas" onclick="irARama(2)">▶ Arte</a></li>
+          <li><a href="#ramas" onclick="irARama(3)">▶ Diseño Textil</a></li>
+          <li><a href="#ramas" onclick="irARama(1)">▶ Diseño Industrial</a></li>
+          <li><a href="#ramas" onclick="irARama(4)">▶ Diseño Gráfico</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="navbar__perfil">
+      <span class="separador">|</span>
+      <div class="perfil__wrap">
+        <img src="Iconos-B/ImgPerfil1.jpg" alt="Perfil" class="icono-perfil perfil-1" id="icono-perfil" onclick="toggleDropdown()" />
+        <div class="perfil__dropdown oculto" id="dropdown-perfil">
+          <p id="nombre-usuario" class="oculto"></p>
+          <a href="registro.html" id="btn-login">Iniciar sesión</a>
+          <a href="registro.html" id="btn-crear">Crear una cuenta</a>
+          <button onclick="cerrarSesion()" id="btn-cerrar" class="oculto">Cerrar sesión</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__col-izquierda">
+      <div class="hero__circulo hero__circulo--beige"></div>
+      <div class="hero__circulo hero__circulo--marron"></div>
+    </div>
+    <div class="hero__col-derecha">
+      <div class="hero__rect-beige-claro"></div>
+      <div class="hero__rect-naranja">
+        <div class="hero__circulo hero__circulo--blanco"></div>
+      </div>
+      <div class="hero__circulo hero__circulo--violeta"></div>
+    </div>
+    <div class="hero__texto">
+      <h1>Bauhaus</h1>
+      <p class="hero__subtitulo">Funcionalidad · Estética · Tecnología · Modernidad</p>
+      <p class="hero__descripcion">
+        Fundada en 1919 por Walter Gropius, la Bauhaus cambió para siempre
+        la historia del diseño al proponer una idea radical: que la belleza
+        debía surgir de la función, y que el arte debía integrarse a la vida cotidiana.
+      </p>
+      <div class="hero__flecha">▼</div>
+    </div>
+  </section>
+
+  <!-- SLIDER RAMAS -->
+  <section class="ramas" id="ramas">
+
+    <button class="ramas__btn ramas__btn--prev" onclick="moverSlider(-1)">&#9664;</button>
+
+    <div class="ramas__contenedor" id="ramasSlider">
+
+      <!-- Slide 1: Arquitectura -->
+      <div class="ramas__slide">
+        <img class="ramas__foto" src="Imagenes/Bauhaus.jpg" alt="Arquitectura" />
+        <div class="ramas__contenido">
+          <h2>Arquitectura</h2>
+          <div class="ramas__linea"></div>
+          <p>En la Bauhaus, la arquitectura era entendida como la síntesis de todas las artes. Su desarrollo se consolidó especialmente bajo la dirección de Walter Gropius, quien proponía una unión entre arte, técnica e industria. Se buscaba crear espacios funcionales, económicos y accesibles, pensados para la vida moderna. Se priorizaban estructuras simples, líneas rectas y el uso de materiales industriales como el hormigón, el vidrio y el acero. La ornamentación se eliminaba en favor de la funcionalidad.</p>
+        </div>
+      </div>
+
+      <!-- Slide 2: Diseño Industrial -->
+      <div class="ramas__slide">
+        <img class="ramas__foto" src="Imagenes/Galeria expo5.jpg" alt="Diseño Industrial" />
+        <div class="ramas__contenido">
+          <h2>Diseño Industrial</h2>
+          <div class="ramas__linea"></div>
+          <p>El diseño industrial en la Bauhaus se centraba en la creación de objetos funcionales que pudieran ser producidos en serie. La idea era democratizar el diseño: hacerlo accesible sin perder calidad estética. Se trabajaba con materiales modernos como acero tubular, vidrio y madera laminada. Diseñadores como Marcel Breuer desarrollaron mobiliario icónico, como la silla Wassily, que combinaba ligereza, resistencia y simplicidad formal.</p>
+        </div>
+      </div>
+
+      <!-- Slide 3: Arte -->
+      <div class="ramas__slide">
+        <img class="ramas__foto" src="Imagenes/Art.jpg" alt="Arte" />
+        <div class="ramas__contenido">
+          <h2>Arte</h2>
+          <div class="ramas__linea"></div>
+          <p>El arte en la Bauhaus funcionaba como un laboratorio de experimentación. Profesores como Paul Klee y Wassily Kandinsky exploraban la relación entre forma, color y emoción. El objetivo no era producir obras tradicionales, sino desarrollar una base teórica y visual que luego pudiera aplicarse al diseño y la arquitectura. Se investigaban conceptos como la abstracción, la geometría y la percepción.</p>
+        </div>
+      </div>
+
+      <!-- Slide 4: Diseño Textil -->
+      <div class="ramas__slide">
+        <img class="ramas__foto" src="Imagenes/DT.png" alt="Diseño Textil" />
+        <div class="ramas__contenido">
+          <h2>Diseño Textil</h2>
+          <div class="ramas__linea"></div>
+          <p>El taller textil fue uno de los más innovadores de la Bauhaus, destacándose por su enfoque experimental. Bajo la dirección de Gunta Stölzl, se investigaron nuevas técnicas de tejido, patrones geométricos y combinaciones de materiales. Los textiles no eran solo decorativos: se pensaban como elementos funcionales dentro de la arquitectura, aportando aislamiento, textura y color a los espacios.</p>
+        </div>
+      </div>
+
+      <!-- Slide 5: Diseño Gráfico -->
+      <div class="ramas__slide">
+        <img class="ramas__foto" src="Imagenes/DG.avif" alt="Diseño Gráfico" />
+        <div class="ramas__contenido">
+          <h2>Diseño Gráfico</h2>
+          <div class="ramas__linea"></div>
+          <p>El diseño gráfico en la Bauhaus revolucionó la comunicación visual. Bajo la influencia de figuras como Herbert Bayer, se impulsó el uso de tipografías sans serif, composiciones asimétricas y una fuerte jerarquía visual. Se buscaba transmitir mensajes de forma clara, directa y universal. Este enfoque sentó las bases del diseño gráfico moderno, influyendo en la publicidad, la señalética y la identidad visual.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="ramas__btn ramas__btn--next" onclick="moverSlider(1)">&#9654;</button>
+
+  </section>
+
+  <!-- PRINCIPALES OBRAS -->
+  <section class="obras">
+    <h2 class="obras__titulo">Principales Obras</h2>
+    <div class="obras__linea-titulo"></div>
+    <div class="obras__galeria">
+      <div class="obras__card">
+        <img src="Imagenes/MBobras3.jpg" alt="Obra Bauhaus" />
+      </div>
+      <div class="obras__card">
+        <img src="Imagenes/Obras7.jpg" alt="Obra Bauhaus" />
+      </div>
+      <div class="obras__card">
+        <img src="Imagenes/Obras4.jpg" alt="Obra Bauhaus" />
+      </div>
+    </div>
+    <div class="obras__footer">
+      <p>La forma sigue a la función.</p>
+      <a href="obras.html" class="btn-obras">Ver más</a>
+    </div>
+  </section>
+
+  <!-- PRINCIPALES FIGURAS -->
+  <section class="figuras">
+    <div class="figuras__linea figuras__linea--izq-1"></div>
+    <div class="figuras__linea figuras__linea--izq-2"></div>
+    <div class="figuras__circulo figuras__circulo--izq"></div>
+    <div class="figuras__linea figuras__linea--der-1"></div>
+    <div class="figuras__linea figuras__linea--der-2"></div>
+    <div class="figuras__circulo figuras__circulo--der"></div>
+
+    <h2 class="figuras__titulo">Principales Figuras</h2>
+    <div class="figuras__linea-titulo"></div>
+
+    <div class="figuras__grid">
+      <div class="flip-card">
+        <div class="flip-card__inner">
+          <div class="flip-card__frente">
+            <img src="Imagenes/WG1.jpg" alt="Walter Gropius" />
+          </div>
+          <div class="flip-card__dorso">
+            <p>Walter Gropius</p>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card">
+        <div class="flip-card__inner">
+          <div class="flip-card__frente">
+            <img src="Imagenes/JI 3.webp" alt="Johannes Itten" />
+          </div>
+          <div class="flip-card__dorso">
+            <p>Johannes Itten</p>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card">
+        <div class="flip-card__inner">
+          <div class="flip-card__frente">
+            <img src="Imagenes/GS2.jpg" alt="Gunta Stölzl" />
+          </div>
+          <div class="flip-card__dorso">
+            <p>Gunta Stölzl</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="figuras.html" class="btn-figuras">Conocer más</a>
+  </section>
+
+  <!-- REGISTRO -->
+  <section class="registro">
+    <div class="registro__contenido">
+      <h2>Registrate</h2>
+      <p>y enterate de todos los eventos relacionados a la Bauhaus cerca tuyo</p>
+      <a href="registro.html" class="btn-registro">Quiero registrarme</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Bauhaus · Lab II · 2026 ©</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
